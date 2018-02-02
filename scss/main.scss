@@ -1,0 +1,138 @@
+/* G L O B A L */
+
+$phone: 450px;
+@mixin phone {
+  @media (max-width: #{$phone}) {
+    @content;
+  }
+}
+
+html, body{
+  height: 100%;
+}
+
+/* R E S E T */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+
+
+ol, ul, a, li {
+  list-style: none;
+  text-decoration:none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+blockquote, q {
+  quotes: "" "";
+}
+
+
+/* B O D Y */
+
+body {
+  background: #F0F5F9;
+  font-family: 'Lato', Sans-Serif;
+  font-size: 62.5%; /* 10px */
+  overflow: hidden;
+  margin: 0;
+}
+
+
+/* N A V */
+
+nav {
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+  margin-top: 2em;
+  @include phone {
+    text-align: left;
+  }
+}
+
+nav ul li {
+  display: inline-block;
+  @include phone {
+    display: block;
+    margin: 2rem;
+  }
+}
+
+nav ul li a{
+  font-size: 1.7em;
+  padding-right: 2.0em;
+  color: #272F32;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+nav ul li a:hover {
+  padding-right: 2.0em;
+  color: #FF3D2E;
+}
+
+
+/*  M C B U R G E R */
+
+.mcburger {
+  z-index: 5;
+  top: 0;
+  cursor: pointer;
+  margin-top: 0.3em;
+  position: absolute;
+}
+
+.burgline {
+  height: 0.2em;
+  width: 25px;
+  border-radius: 2px;
+  margin: 0.5em;
+  background-color: #000;
+  transition: 0.15s ease;
+}
+
+.hidden {
+  width: 0;
+}
+
+.downsandwichstart {
+  transform: translateY(-7px) rotate(-45deg);
+  background-color: #FF3D2E;
+}
+
+.topsandwichstart {
+  transform: translateY(7px) rotate(45deg);
+  background-color: #FF3D2E;
+}
